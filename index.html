@@ -1,20 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blackjack Game</title>
+    <title>2048</title>
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Outline|Sniglet" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="/JS/jquery.js"></script>
-    <script src="/JS/blackjack.js"></script>
   </head>
   <body>
-    <div class="page">
-      <div class="dealer-cards">
-        <div class="card card1"></div>
-        <div class="card flipped card2"></div>
-        <div class="new-cards"></div>
-        <div class="clear"></div>
-        <div id="dealerTotal" class="dealer-total"></div>
+    <div id="container">
+      <div id="splash" class="screen">
+        <h1>20<span class="char1">4</span><span class="char2">8</span></h1>
+        <button id="start" onclick="start()">New Game</button>
+      </div>
+      <div id="pause" class="screen">
+        <h1>Paused</h1>
+        <button onclick="reset()">reset</button>
+        <button onclick="resume()">continue</button>
+      </div>
+      <div id="end" class="screen">end</div>
+      <div id="game" class="screen">
+        <h1>2048</h1>
+        <div id="info">score:
+          <span id="score"></span>
+          <button type="button" id="pausebtn" onclick="pause()">Pause</button>
+        </div>
+        <div id="gamerarea">
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+          <div class="element"></div>
+        </div>
       </div>
     </div>
+    <div id="control">
+      <h2>control</h2>
+      <button onclick="left()">left</button>
+      <button onclick="up()">up</button>
+      <button onclick="down()">down</button>
+      <button onclick="right()">right</button>
+    </div>
+    <p>Arrow keys work too!</p>
+    <script>
+      var q = 4;
+      var arr = document.getElementsByClassName("element");
+      init();
+    </script>
   </body>
 </html>
