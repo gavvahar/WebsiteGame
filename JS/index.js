@@ -13,3 +13,12 @@ function init() {
   var score = document.getElementById("score");
   score.innerHTML = 0;
 }
+
+function start() {
+  var splash = document.getElementById("splash");
+  var game = document.getElementById("game");
+  splash.style.display = "none";
+  game.style.display = "block";
+  random();
+  random();
+}
