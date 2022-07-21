@@ -1,6 +1,16 @@
 window.onload = init();
 var arr = document.getElementsByClassName("element");
 
+function random() {
+  var done = false;
+  while (done === false) {
+    var num = Math.floor(Math.random() * 16);
+    if (arr[num].innerHTML === "") {
+      arr[num].innerHTML = 2;
+      done = true;
+    }
+  }
+}
 function init() {
   var s = document.getElementById("splash");
   s.style.display = "block";
