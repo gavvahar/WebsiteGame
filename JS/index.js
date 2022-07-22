@@ -41,6 +41,11 @@ function init() {
   score.innerHTML = 0;
 }
 
+function reset() {
+  var pause = document.getElementById("pause");
+  pause.style.display = "none";
+  init();
+}
 function start() {
   var splash = document.getElementById("splash");
   var game = document.getElementById("game");
