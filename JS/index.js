@@ -11,6 +11,23 @@ function random() {
     }
   }
 }
+
+function av() {
+  var x = false;
+  var count = 0;
+  for (var i = 0; i < 16; i++) {
+    if (arr[i].innerHTML === "") {
+      x = true;
+      count++;
+    }
+  }
+  if (x) {
+    random();
+  }
+  if (count === 1) {
+    check();
+  }
+}
 function init() {
   var s = document.getElementById("splash");
   s.style.display = "block";
