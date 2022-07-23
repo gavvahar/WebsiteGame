@@ -1,6 +1,52 @@
 window.onload = init();
 var arr = document.getElementsByClassName("element");
 
+function right() {
+  var can = false;
+  var access = false;
+  var k;
+  var score = document.getElementById("score");
+  for (var i = 14; i > 0; i -= 4) {
+    access = false;
+    for (var j = i; j >= i - 2; j--) {
+      if (arr[j].innerHTML !== "") {
+        k = j;
+        while (
+          k < i + 1 &&
+          (parseInt(arr[k + 1].innerHTML) === parseInt(arr[k].innerHTML) ||
+            arr[k + 1].innerHTML === "")
+        ) {
+          if (
+            parseInt(arr[k + 1].innerHTML) === parseInt(arr[k].innerHTML) &&
+            access === false
+          ) {
+            arr[k + 1].innerHTML =
+              parseInt(arr[k + 1].innerHTML) + parseInt(arr[k].innerHTML);
+            score.innerHTML =
+              parseInt(arr[k + 1].innerHTML) + parseInt(score.innerHTML);
+            arr[k].innerHTML = "";
+            can = true;
+            access = true;
+          } else if (
+            parseInt(arr[k + 1].innerHTML) === parseInt(arr[k].innerHTML) &&
+            access === true
+          ) {
+            access === false;
+          } else if (arr[k + 1].innerHTML === "") {
+            arr[k + 1].innerHTML = parseInt(arr[k].innerHTML);
+            arr[k].innerHTML = "";
+            can = true;
+          }
+          k += 1;
+        }
+      }
+    }
+  }
+  if (can) {
+    av();
+  }
+}
+
 function random() {
   var done = false;
   while (done === false) {
@@ -28,6 +74,7 @@ function av() {
     check();
   }
 }
+
 function init() {
   var s = document.getElementById("splash");
   s.style.display = "block";
@@ -47,11 +94,13 @@ function pause() {
   var control = document.getElementById("control");
   control.style.display = "none";
 }
+
 function reset() {
   var pause = document.getElementById("pause");
   pause.style.display = "none";
   init();
 }
+
 function start() {
   var splash = document.getElementById("splash");
   var game = document.getElementById("game");
