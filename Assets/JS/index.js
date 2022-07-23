@@ -185,6 +185,13 @@ function up() {
   }
 }
 
+function end() {
+  alert(
+    "Your Score Is:" + document.getElementById("score").innerHTML + " Game Over"
+  );
+  reset();
+}
+
 function random() {
   var done = false;
   while (done === false) {
@@ -210,6 +217,161 @@ function av() {
   }
   if (count === 1) {
     check();
+  }
+}
+
+function check() {
+  var x = false;
+  for (var i = 0; i < 16; i++) {
+    switch (i) {
+      case 0:
+        if (
+          arr[1].innerHTML === arr[0].innerHTML ||
+          arr[4].innerHTML === arr[0].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 1:
+        if (
+          arr[1].innerHTML === arr[0].innerHTML ||
+          arr[2].innerHTML === arr[1].innerHTML ||
+          arr[1].innerHTML === arr[5].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 2:
+        if (
+          arr[2].innerHTML === arr[1].innerHTML ||
+          arr[3].innerHTML === arr[2].innerHTML ||
+          arr[2].innerHTML === arr[6].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 3:
+        if (
+          arr[3].innerHTML === arr[2].innerHTML ||
+          arr[3].innerHTML === arr[7].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 4:
+        if (
+          arr[4].innerHTML === arr[0].innerHTML ||
+          arr[4].innerHTML === arr[8].innerHTML ||
+          arr[4].innerHTML === arr[5].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 5:
+        if (
+          arr[5].innerHTML === arr[1].innerHTML ||
+          arr[5].innerHTML === arr[6].innerHTML ||
+          arr[4].innerHTML === arr[5].innerHTML ||
+          arr[5].innerHTML === arr[9].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 6:
+        if (
+          arr[6].innerHTML === arr[5].innerHTML ||
+          arr[6].innerHTML === arr[2].innerHTML ||
+          arr[6].innerHTML === arr[7].innerHTML ||
+          arr[6].innerHTML === arr[10].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 7:
+        if (
+          arr[7].innerHTML === arr[3].innerHTML ||
+          arr[7].innerHTML === arr[11].innerHTML ||
+          arr[7].innerHTML === arr[6].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 8:
+        if (
+          arr[8].innerHTML === arr[4].innerHTML ||
+          arr[8].innerHTML === arr[12].innerHTML ||
+          arr[8].innerHTML === arr[9].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 9:
+        if (
+          arr[9].innerHTML === arr[8].innerHTML ||
+          arr[9].innerHTML === arr[5].innerHTML ||
+          arr[9].innerHTML === arr[10].innerHTML ||
+          arr[9].innerHTML === arr[13].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 10:
+        if (
+          arr[10].innerHTML === arr[9].innerHTML ||
+          arr[10].innerHTML === arr[11].innerHTML ||
+          arr[10].innerHTML === arr[6].innerHTML ||
+          arr[10].innerHTML === arr[14].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 11:
+        if (
+          arr[11].innerHTML === arr[7].innerHTML ||
+          arr[11].innerHTML === arr[15].innerHTML ||
+          arr[11].innerHTML === arr[10].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 12:
+        if (
+          arr[12].innerHTML === arr[8].innerHTML ||
+          arr[12].innerHTML === arr[13].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 13:
+        if (
+          arr[13].innerHTML === arr[12].innerHTML ||
+          arr[13].innerHTML === arr[9].innerHTML ||
+          arr[13].innerHTML === arr[14].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 14:
+        if (
+          arr[14].innerHTML === arr[13].innerHTML ||
+          arr[14].innerHTML === arr[10].innerHTML ||
+          arr[14].innerHTML === arr[15].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+      case 15:
+        if (
+          arr[15].innerHTML === arr[11].innerHTML ||
+          arr[15].innerHTML === arr[14].innerHTML
+        ) {
+          x = true;
+        }
+        break;
+    }
+  }
+  if (!x) {
+    end();
   }
 }
 
@@ -256,18 +418,13 @@ function resume() {
 }
 
 window.addEventListener("keydown", function (e) {
-  switch (e.code) {
-    case "ArrowLeft":
-      left();
-      break;
-    case "ArrowRight":
-      right();
-      break;
-    case "ArrowUp":
-      up();
-      break;
-    case "ArrowDown":
-      down();
-      break;
+  if (e.code == "ArrowLeft") {
+    left();
+  } else if (e.code == "ArrowRight") {
+    right();
+  } else if (e.code == "ArrowUp") {
+    up();
+  } else if (e.code == "ArrowDown") {
+    down();
   }
 });
