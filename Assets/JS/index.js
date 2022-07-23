@@ -204,19 +204,6 @@ function init() {
   score.innerHTML = 0;
 }
 
-function pause() {
-  var pause = document.getElementById("pause");
-  pause.style.display = "block";
-  var control = document.getElementById("control");
-  control.style.display = "none";
-}
-
-function reset() {
-  var pause = document.getElementById("pause");
-  pause.style.display = "none";
-  init();
-}
-
 function start() {
   var splash = document.getElementById("splash");
   var game = document.getElementById("game");
@@ -224,11 +211,4 @@ function start() {
   game.style.display = "block";
   random();
   random();
-}
-
-function resume() {
-  var pause = document.getElementById("pause");
-  pause.style.display = "none";
-  var control = document.getElementById("control");
-  control.style.display = "block";
 }
