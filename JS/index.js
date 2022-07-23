@@ -254,3 +254,20 @@ function resume() {
   var control = document.getElementById("control");
   control.style.display = "block";
 }
+
+window.addEventListener("keydown", function (e) {
+  switch (e.code) {
+    case "ArrowLeft":
+      left();
+      break;
+    case "ArrowRight":
+      right();
+      break;
+    case "ArrowUp":
+      up();
+      break;
+    case "ArrowDown":
+      down();
+      break;
+  }
+});
