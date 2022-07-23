@@ -47,6 +47,144 @@ function right() {
   }
 }
 
+function left() {
+  var can = false;
+  var access = false;
+  var k;
+  var score = document.getElementById("score");
+  for (var i = 13; i > 0; i -= 4) {
+    access = false;
+    for (var j = i; j <= i + 2; j++) {
+      if (arr[j].innerHTML !== "") {
+        k = j;
+        while (
+          k > i - (i % 4) &&
+          (parseInt(arr[k - 1].innerHTML) === parseInt(arr[k].innerHTML) ||
+            arr[k - 1].innerHTML === "")
+        ) {
+          if (
+            parseInt(arr[k - 1].innerHTML) === parseInt(arr[k].innerHTML) &&
+            access === false
+          ) {
+            arr[k - 1].innerHTML =
+              parseInt(arr[k - 1].innerHTML) + parseInt(arr[k].innerHTML);
+            arr[k].innerHTML = "";
+            can = true;
+            access = true;
+            score.innerHTML =
+              parseInt(arr[k - 1].innerHTML) + parseInt(score.innerHTML);
+          } else if (
+            parseInt(arr[k - 1].innerHTML) === parseInt(arr[k].innerHTML) &&
+            access === true
+          ) {
+            access === false;
+          } else if (arr[k - 1].innerHTML === "") {
+            arr[k - 1].innerHTML = parseInt(arr[k].innerHTML);
+            arr[k].innerHTML = "";
+            can = true;
+          }
+          k -= 1;
+        }
+      }
+    }
+  }
+  if (can) {
+    av();
+  }
+}
+
+function down() {
+  var can = false;
+  var access = false;
+  var k;
+  var score = document.getElementById("score");
+  for (var i = 11; i > 7; i -= 1) {
+    access = false;
+    for (var j = i; j >= 0; j = j - 4) {
+      if (arr[j].innerHTML !== "") {
+        k = j;
+        while (
+          k < 12 &&
+          (parseInt(arr[k + 4].innerHTML) === parseInt(arr[k].innerHTML) ||
+            arr[k + 4].innerHTML === "")
+        ) {
+          if (
+            parseInt(arr[k + 4].innerHTML) === parseInt(arr[k].innerHTML) &&
+            access === false
+          ) {
+            arr[k + 4].innerHTML =
+              parseInt(arr[k + 4].innerHTML) + parseInt(arr[k].innerHTML);
+            arr[k].innerHTML = "";
+            can = true;
+            access = true;
+            score.innerHTML =
+              parseInt(arr[k + 4].innerHTML) + parseInt(score.innerHTML);
+          } else if (
+            parseInt(arr[k + 4].innerHTML) === parseInt(arr[k].innerHTML) &&
+            access === true
+          ) {
+            access === false;
+          } else if (arr[k + 4].innerHTML === "") {
+            arr[k + 4].innerHTML = parseInt(arr[k].innerHTML);
+            arr[k].innerHTML = "";
+            can = true;
+          }
+          k += 4;
+        }
+      }
+    }
+  }
+  if (can) {
+    av();
+  }
+}
+
+function up() {
+  var can = false;
+  var access = false;
+  var k;
+  var score = document.getElementById("score");
+  for (var i = 7; i > 3; i -= 1) {
+    access = false;
+    for (var j = i; j < i + 9; j += 4) {
+      if (arr[j].innerHTML !== "") {
+        k = j;
+        while (
+          k >= i &&
+          (parseInt(arr[k - 4].innerHTML) === parseInt(arr[k].innerHTML) ||
+            arr[k - 4].innerHTML === "")
+        ) {
+          if (
+            parseInt(arr[k - 4].innerHTML) === parseInt(arr[k].innerHTML) &&
+            access === false
+          ) {
+            arr[k - 4].innerHTML =
+              parseInt(arr[k - 4].innerHTML) + parseInt(arr[k].innerHTML);
+            arr[k].innerHTML = "";
+            can = true;
+            access = true;
+            score.innerHTML =
+              parseInt(arr[k - 4].innerHTML) + parseInt(score.innerHTML);
+          } else if (
+            parseInt(arr[k - 4].innerHTML) === parseInt(arr[k].innerHTML) &&
+            access === true
+          ) {
+            access === false;
+          } else if (arr[k - 4].innerHTML === "") {
+            arr[k - 4].innerHTML = parseInt(arr[k].innerHTML);
+            arr[k].innerHTML = "";
+            can = true;
+          }
+          k -= 4;
+        }
+      }
+    }
+  }
+  if (can) {
+    av();
+  }
+}
+
 function random() {
   var done = false;
   while (done === false) {
