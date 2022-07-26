@@ -1,4 +1,3 @@
-let ourStorage = window.localStorage;
 function pause() {
   var pause = document.getElementById("pause");
   pause.style.display = "block";

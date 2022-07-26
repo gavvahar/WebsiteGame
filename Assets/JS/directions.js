@@ -42,6 +42,7 @@ function right() {
   if (can) {
     av();
   }
+  ourStorage.setItem("score", score.innerHTML)
 }
 
 function left() {
@@ -88,6 +89,7 @@ function left() {
   if (can) {
     av();
   }
+  ourStorage.setItem("score", score.innerHTML)
 }
 
 function down() {
@@ -134,6 +136,7 @@ function down() {
   if (can) {
     av();
   }
+  ourStorage.setItem("score", score.innerHTML)
 }
 
 function up() {
@@ -180,6 +183,7 @@ function up() {
   if (can) {
     av();
   }
+  ourStorage.setItem("score", score.innerHTML)
 }
 
 window.addEventListener("keydown", function (e) {
