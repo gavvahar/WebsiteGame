@@ -1,4 +1,5 @@
 window.onload = init();
+// var ourStorage = window.localStorage;
 var arr = document.getElementsByClassName("element");
 
 function end() {
@@ -13,7 +14,11 @@ function random() {
   while (done === false) {
     var num = Math.floor(Math.random() * 16);
     if (arr[num].innerHTML === "") {
-      arr[num].innerHTML = 2;
+      x2 = randomNumber(2, 4);
+      let array = [2, 4];
+      let index = randomNumber(0, 1);
+      arr[num].innerHTML = array[index];
+      console.log(array[index]);
       done = true;
     }
   }
@@ -211,4 +216,8 @@ function start() {
   game.style.display = "block";
   random();
   random();
+}
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
