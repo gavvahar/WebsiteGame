@@ -204,7 +204,6 @@ function init() {
 }
 
 function start() {
-  var splash = document.getElementById("splash");
   var game = document.getElementById("game");
   splash.style.display = "none";
   game.style.display = "block";
@@ -212,7 +211,15 @@ function start() {
     arr[i].innerHTML = "";
   }
   var score = document.getElementById("score");
-  score.innerHTML = 0;
+  var savedScore = ourStorage.getItem("score");
+  if(ourStorage.score)
+  {
+    score.innerHTML = savedScore;
+  }else
+  {
+    score.innerHTML = 0;
+    ourStorage.setItem("score", 0)
+  }
   random();
   random();
 }
