@@ -43,6 +43,7 @@ function right() {
     av();
   }
   ourStorage.setItem("score", score.innerHTML);
+  saveNumber();
 }
 
 function left() {
@@ -90,6 +91,7 @@ function left() {
     av();
   }
   ourStorage.setItem("score", score.innerHTML);
+  saveNumber();
 }
 
 function down() {
@@ -137,6 +139,7 @@ function down() {
     av();
   }
   ourStorage.setItem("score", score.innerHTML);
+  saveNumber();
 }
 
 function up() {
@@ -184,6 +187,7 @@ function up() {
     av();
   }
   ourStorage.setItem("score", score.innerHTML);
+  saveNumber();
 }
 
 window.addEventListener("keydown", function (e) {
@@ -197,3 +201,9 @@ window.addEventListener("keydown", function (e) {
     down();
   }
 });
+
+function saveNumber() {
+  for (i = 0; i < arr.length; i++) {
+    ourStorage.setItem(`${i}`, arr[i].innerHTML);
+  }
+}

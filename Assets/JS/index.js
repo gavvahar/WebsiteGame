@@ -18,7 +18,6 @@ function random() {
       let array = [2, 4];
       let index = randomNumber(0, 1);
       arr[num].innerHTML = array[index];
-      console.log(array[index]);
       done = true;
     }
   }
@@ -217,6 +216,15 @@ function start() {
   } else {
     score.innerHTML = 0;
     ourStorage.setItem("score", 0);
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    let savedArr = ourStorage.getItem(`${i}`);
+    if (ourStorage.i) {
+      arr[i].innerHTML = savedArr;
+    } else {
+      ourStorage.setItem(`${i}`, "");
+    }
   }
   random();
   random();
