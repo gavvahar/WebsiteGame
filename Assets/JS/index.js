@@ -212,13 +212,11 @@ function start() {
   }
   var score = document.getElementById("score");
   var savedScore = ourStorage.getItem("score");
-  if(ourStorage.score)
-  {
+  if (ourStorage.score) {
     score.innerHTML = savedScore;
-  }else
-  {
+  } else {
     score.innerHTML = 0;
-    ourStorage.setItem("score", 0)
+    ourStorage.setItem("score", 0);
   }
   random();
   random();
