@@ -1,6 +1,6 @@
-window.onload = init();
 var ourStorage = window.localStorage;
 var arr = document.getElementsByClassName("element");
+window.onload = init();
 
 function end() {
   alert(
@@ -199,7 +199,6 @@ function check() {
 function init() {
   var s = document.getElementById("splash");
   s.style.display = "block";
-  var arr = document.getElementsByClassName("element");
   for (var i = 0; i < 16; i += 1) {
     arr[i].innerHTML = "";
   }
