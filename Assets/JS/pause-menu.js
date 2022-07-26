@@ -1,3 +1,4 @@
+let ourStorage = window.localStorage;
 function pause() {
   var pause = document.getElementById("pause");
   pause.style.display = "block";
@@ -9,6 +10,7 @@ function reset() {
   var pause = document.getElementById("pause");
   pause.style.display = "none";
   init();
+  ourStorage.clear();
 }
 
 function resume() {
