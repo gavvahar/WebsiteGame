@@ -1,5 +1,5 @@
 window.onload = init();
-// var ourStorage = window.localStorage;
+var ourStorage = window.localStorage;
 var arr = document.getElementsByClassName("element");
 
 function end() {
