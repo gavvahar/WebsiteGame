@@ -4,7 +4,9 @@ window.onload = init();
 
 function end() {
   alert(
-    "Your Score Is:" + document.getElementById("score").innerHTML + " Game Over"
+    "Your Score Is: " +
+      document.getElementById("score").innerHTML +
+      " Game Over"
   );
   reset();
 }
