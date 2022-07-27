@@ -10,16 +10,12 @@ function end() {
 }
 
 function random() {
-  // var done = false;
-  // while (done === false) {
-    var num = Math.floor(Math.random() * 16);
-    if (arr[num].innerHTML === "") {
-      let array = [2, 4];
-      let index = randomNumber(0, 1);
-      arr[num].innerHTML = array[index];
-      // done = true;
-    }
-  // }
+  var num = Math.floor(Math.random() * 16);
+  if (arr[num].innerHTML === "") {
+    let array = [2, 4];
+    let index = randomNumber(0, 1);
+    arr[num].innerHTML = array[index];
+  }
 }
 
 function av() {
@@ -205,9 +201,6 @@ function start() {
   var game = document.getElementById("game");
   splash.style.display = "none";
   game.style.display = "block";
-  // for (var i = 0; i < 16; i += 1) {
-  //   arr[i].innerHTML = "";
-  // }
   var score = document.getElementById("score");
   var savedScore = ourStorage.getItem("score");
 
@@ -226,7 +219,7 @@ function start() {
     score.innerHTML = 0;
     ourStorage.setItem("score", 0);
     random();
-      random();
+    random();
   }
 }
 
