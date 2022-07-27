@@ -10,17 +10,16 @@ function end() {
 }
 
 function random() {
-  var done = false;
-  while (done === false) {
+  // var done = false;
+  // while (done === false) {
     var num = Math.floor(Math.random() * 16);
     if (arr[num].innerHTML === "") {
-      x2 = randomNumber(2, 4);
       let array = [2, 4];
       let index = randomNumber(0, 1);
       arr[num].innerHTML = array[index];
-      done = true;
+      // done = true;
     }
-  }
+  // }
 }
 
 function av() {
@@ -206,28 +205,29 @@ function start() {
   var game = document.getElementById("game");
   splash.style.display = "none";
   game.style.display = "block";
-  for (var i = 0; i < 16; i += 1) {
-    arr[i].innerHTML = "";
-  }
+  // for (var i = 0; i < 16; i += 1) {
+  //   arr[i].innerHTML = "";
+  // }
   var score = document.getElementById("score");
   var savedScore = ourStorage.getItem("score");
+
+  for (let i = 0; i < arr.length; i++) {
+    let savedArr = ourStorage.getItem(`${i}`);
+    if (savedArr) {
+      arr[i].innerHTML = savedArr;
+    } else {
+      arr[i].innerHTML = "";
+      ourStorage.setItem(`${i}`, "");
+    }
+  }
   if (ourStorage.score) {
     score.innerHTML = savedScore;
   } else {
     score.innerHTML = 0;
     ourStorage.setItem("score", 0);
+    random();
+      random();
   }
-
-  for (let i = 0; i < arr.length; i++) {
-    let savedArr = ourStorage.getItem(`${i}`);
-    if (ourStorage.i) {
-      arr[i].innerHTML = savedArr;
-    } else {
-      ourStorage.setItem(`${i}`, "");
-    }
-  }
-  random();
-  random();
 }
 
 function randomNumber(min, max) {

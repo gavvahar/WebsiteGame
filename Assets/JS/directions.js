@@ -42,8 +42,7 @@ function right() {
   if (can) {
     av();
   }
-  ourStorage.setItem("score", score.innerHTML);
-  saveNumber();
+  saveGame();
 }
 
 function left() {
@@ -90,8 +89,7 @@ function left() {
   if (can) {
     av();
   }
-  ourStorage.setItem("score", score.innerHTML);
-  saveNumber();
+  saveGame();
 }
 
 function down() {
@@ -138,8 +136,7 @@ function down() {
   if (can) {
     av();
   }
-  ourStorage.setItem("score", score.innerHTML);
-  saveNumber();
+  saveGame();
 }
 
 function up() {
@@ -186,8 +183,7 @@ function up() {
   if (can) {
     av();
   }
-  ourStorage.setItem("score", score.innerHTML);
-  saveNumber();
+  saveGame();
 }
 
 window.addEventListener("keydown", function (e) {
@@ -202,7 +198,8 @@ window.addEventListener("keydown", function (e) {
   }
 });
 
-function saveNumber() {
+function saveGame() {
+  ourStorage.setItem("score", score.innerHTML);
   for (i = 0; i < arr.length; i++) {
     ourStorage.setItem(`${i}`, arr[i].innerHTML);
   }
