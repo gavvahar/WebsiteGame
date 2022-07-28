@@ -187,14 +187,19 @@ function up() {
 }
 
 window.addEventListener("keydown", function (e) {
-  if (e.code == "ArrowLeft") {
-    left();
-  } else if (e.code == "ArrowRight") {
-    right();
-  } else if (e.code == "ArrowUp") {
-    up();
-  } else if (e.code == "ArrowDown") {
-    down();
+  switch (e.code) {
+    case "ArrowLeft":
+      left();
+      break;
+    case "ArrowRight":
+      right();
+      break;
+    case "ArrowUp":
+      up();
+      break;
+    case "ArrowDown":
+      down();
+      break;
   }
 });
 

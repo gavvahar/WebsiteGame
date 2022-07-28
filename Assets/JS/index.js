@@ -203,7 +203,6 @@ function start() {
   var game = document.getElementById("game");
   splash.style.display = "none";
   game.style.display = "block";
-  var score = document.getElementById("score");
   var savedScore = ourStorage.getItem("score");
 
   for (let i = 0; i < arr.length; i++) {
@@ -215,16 +214,22 @@ function start() {
       ourStorage.setItem(`${i}`, "");
     }
   }
+  var score = document.getElementById("score");
   if (ourStorage.score) {
     score.innerHTML = savedScore;
   } else {
     score.innerHTML = 0;
     ourStorage.setItem("score", 0);
-    random();
-    random();
+    randomTimes(2);
   }
 }
 
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomTimes(times) {
+  for (let i = 0; i < times; i++) {
+    random();
+  }
 }
