@@ -1,0 +1,81 @@
+@import "config";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p{
+    border-radius: $defaultPX;
+    padding: 5px;
+    border: $p-border;
+    background: $p-background;
+    color: $p-color;
+    font-size: 8px + $defaultPX;
+}
+
+button{
+    font-family: $font;
+}
+
+body{
+    background: $body-background;
+    height: $height;
+}
+
+h1,h2{
+    text-align:center;
+    margin-bottom:$defaultPX*2;
+    margin-top:$defaultPX;
+    font-family: 'Londrina Outline', cursive;
+}
+
+#control{width: 200px;margin: 20px auto;}
+#control h2{font-family: $font;}
+#control button{padding:5px;}
+
+#container{
+    width:400px;
+    height:500px;
+    background: $container-background;
+    border-radius: $container-border-radius;
+    border: $container-border;
+    box-shadow: $container-box-shadow;
+    margin: 20px auto;
+    overflow:hidden;
+    z-index:5;
+}
+
+.screen{
+   width:inherit; 
+   height:inherit;
+}
+
+#pause{
+    display:none;
+    position:absolute;
+    background: rgba(50,50,50,0.4);
+    z-index:1;
+    border-radius: 16px 16px 16px 16px;
+    text-align:center;
+}
+
+#pause h1{
+    margin-top:150px;
+    color:orange;
+}
+
+#pause button{
+    display:block;
+    background: linear-gradient(to right, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+    border-radius: 10px;
+    padding:10px;
+    color:black;
+    margin:20px auto;
+    font-size:30px;
+}
+
+#end{
+    display:none;
+}

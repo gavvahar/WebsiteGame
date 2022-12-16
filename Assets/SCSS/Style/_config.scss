@@ -1,0 +1,14 @@
+$p-background:lightgray;
+$p-border: 2px solid white;
+$p-color:black;
+
+$height:100%;
+$body-background:linear-gradient(45deg, rgba(189,245,152,1) 0%, rgba(50,87,81,1) $height);
+
+$container-background:linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(216,225,231,0.54) 49%, rgba(181,198,208,0.52) 51%, rgba(224,239,249,0.06) 100%);
+$container-border-radius:16px 16px 16px 16px;
+$container-border:1px solid #d6ced6;
+$container-box-shadow:0px 14px 30px -9px rgba(0,0,0,0.74);
+
+$defaultPX:10px;
+$font:'Sniglet', cursive;
