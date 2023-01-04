@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"game.css"}
+{"version":3,"sourceRoot":"","sources":["../../SCSS/Game/game.scss","../../SCSS/Game/_config.scss"],"names":[],"mappings":"AAEA;EACG,SCHY;EDIZ;EACA;;;AAGH;EACI,SCPW;EDQX,YCPc;EDQd;EACA;;;AAGJ;EACI,OCXa;;;ADcjB;EACI;EACA,QCdK;EDeL,MCfK;EDgBL,OCfI;EDgBJ,QChBI;EDiBJ,YCtBc;;;ADyBlB;EAEI,OCpBY;EDqBZ,QCrBY;EDsBZ;EACA,QCtBa;EDuBb;EACA,cCtBK;EDuBL,eCvBK;EDwBL;EACA;EACA;EACA,YC5BS;ED6BT;EACA","file":"game.css"}

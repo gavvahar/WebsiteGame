@@ -1,0 +1,45 @@
+@import "config";
+
+#game{
+   padding: $game-padding; 
+   position:relative;
+   display:none;
+}
+
+#game #info{
+    padding: $info-padding;
+    background: $info-background;
+    margin: 0 auto;
+    width: 200px;
+}
+
+#game #info #resetbtn{
+    float: $resetbtn-float;
+}
+
+#game #gamearea {
+    position: absolute;
+    bottom: $bottom;
+    left: $bottom;
+    width: $width;
+    height: $width;
+    background: $info-background;
+}
+
+#game #gamearea .element
+{
+    width: $element-width;
+    height: $element-width;
+    background: transparent;
+    border: $element-border;
+    display: inline-block;
+    margin-right: $margin;
+    margin-bottom: $margin;
+    overflow:hidden;
+    font-size:30px;
+    line-height:2.2;
+    text-align: $text-align;
+    font-family: 'Sniglet', cursive;
+    color:black;
+
+}
